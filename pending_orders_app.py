@@ -10,7 +10,7 @@ st.write("""Orders that need to filled.""")
 
 # Name_on_order = st.text_input("Name on Smoothie", "")
 # st.write("The name on your Smoothie will be:", Name_on_order)
-cnx=st.connection("Snowflake")
+cnx=st.connection("snowflake")
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED")==0).collect()
 
